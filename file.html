@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="file.js"></script>
+    <title>CS353 Group Project</title>
+  </head>
+  <body>
+    <a href="register.html" ><button id="logout">Logout</button></a>
+    <form id="userInfo" class="form-vertical" method="post">
+      <table id="mytable">
+        <label for="fullName">Full Name: </label>
+        <input type="text" id="fullName" name="fullName" placeholder="Joe Bloggs" required><br><br>
+        <label for="age">Current Age: </label>
+        <input type="number" id="age" name="age" placeholder="20" required><br><br>
+        <label for="height">Height(cm): </label>
+        <input type="number" id="height" name="height" min="0.1" placeholder="145.8" step="0.1" required><label>kg</label>
+        <br><br>
+        <label for="bodyFat">Body Fat Percentage: </label>
+        <input type="number" id="bodyFat" name="bodyFat" min="0.1" max="99.9" placeholder="25.5" step="0.1"><label>%</label>
+        <br><br>
+        <label for="weight">Current Weight: </label>
+        <input type="number" id="weight" name="weight" min="0.1" placeholder="45.8" step="0.1" required><label>kg</label>
+        <br><br>
+        <label for="gender">Gender: </label>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="femle">Female</option>
+          <option value="other">Other</option>
+        </select><br><br>
+        <label for="active">Activity Level: </label>
+        <select id="active" name="active">
+          <option value="sedentary">Sedentary</option>
+          <option value="lightly">Lightly</option>
+          <option value="moderately">Moderately</option>
+          <option value="very">Very</option>
+        </select>
+        <br><br>
+        <label for="diet">Dietary Preference: </label>
+        <select id="diet" name="diet">
+          <option value="normal">Normal</option>
+          <option value="vegan">Vegan</option>
+          <option value="vegetarain">Vegetarain</option>
+          <option value="pescatarian">Pescatarian</option>
+          <option value="flexitarian">Flexitarian</option>
+          <option value="macrobiotic">Macrobiotic</option>
+        </select><br><br>
+      </table>
+      <button id="confirm">Confirm</button><br><br>
+      <div>
+        <div>BMR Results: <div id="BMR"></div></div><br>
+        <div>Activity Multiplier: <div id="activity"></div></div>
+      </div>
+    </form>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-analytics.js";
+  import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDT7cBYkZmPbnHdfnlpt6I8amIV0_duwRw",
+    authDomain: "team-b016c.firebaseapp.com",
+    databaseURL: "https://team-b016c-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "team-b016c",
+    storageBucket: "team-b016c.appspot.com",
+    messagingSenderId: "657234540227",
+    appId: "1:657234540227:web:33fa9818efd59ac7af5476",
+    measurementId: "G-EGL8FM1WTG"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const analytics = getAnalytics(app);
+
+  document.getElementById("logout").addEventListener('click', function() {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      console.log("Signed Out")
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode + errorMessage);
+    });
+  })
+ 
+</script>
+  </body>
+</html>
