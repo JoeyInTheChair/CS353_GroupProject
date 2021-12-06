@@ -1,0 +1,13 @@
+.NavigationBar {
+    width: 100%;
+    background: black;
+    opacity: 0.75;
+    color: aliceblue;
+    position: fixed;
+    top: 0;
+    text-align: left;
+}
+
+a{
+    color: aliceblue;
+}
