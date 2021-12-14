@@ -13,8 +13,8 @@ const NavigationBar = () => {
               <Link to="/diet-form">
                 <li>Diet Form</li>
               </Link>
-              <Link to="/register">
-                <li>Register</li>
+              <Link to="/user-results">
+                <li>Results</li>
               </Link>
             </ul>
           </nav>

@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
 import DietForm from './components/DietForm';
-import SignUpForm from './components/SignUpForm';
+import Results from './components/Results';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/diet-form" element={<DietForm />} />
-          <Route path="/register" element={<SignUpForm />} />
+          <Route path="user-results" element={<Results />} />
         </Routes>
       </Router>
     </div>
