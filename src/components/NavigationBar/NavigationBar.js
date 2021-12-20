@@ -16,6 +16,9 @@ const NavigationBar = () => {
               <Link to="/user-results">
                 <li>Results</li>
               </Link>
+              <Link to="/log-in">
+                <li>Log In</li>
+              </Link>
             </ul>
           </nav>
         </header>

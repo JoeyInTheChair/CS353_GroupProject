@@ -4,6 +4,7 @@ import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
 import DietForm from './components/DietForm';
 import Results from './components/Results';
+import LogIn from './components/LogIn';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/diet-form" element={<DietForm />} />
           <Route path="user-results" element={<Results />} />
+          <Route path="log-in" element={<LogIn />} />
         </Routes>
       </Router>
     </div>
