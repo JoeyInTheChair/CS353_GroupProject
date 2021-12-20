@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="Formula.js" defer></script>
+  <link href="Design.css" rel="stylesheet">
+</head>
+<body>
+<div id="app-wrapper">
+  <div id="app">
+
+    <div class="app-inner-cont" id="intro-cont">
+      <h1></h1>
+      <p>Please enter you measurments and we'll calculate your BMI and TDEE</p>
+    </div>
+
+    <div class="app-inner-cont cf" id="input-cont">
+      <form>
+        <div class="row" id="input-wrapper">
+          <div class="col-3">
+            <fieldset>
+              <legend>Unit</legend>
+              <div class="radio-wrapper">
+                <input type="radio" id="unit-metric" value="metric" name="radio-unit" checked />
+                <label class="radio" for="unit-metric">Metric</label>
+
+                <input type="radio" id="unit-imperial" value="imperial" name="radio-unit" />
+                <label class="radio" for="unit-imperial">Imperial</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="col-3">
+            <fieldset>
+              <legend>Gender</legend>
+              <div class="radio-wrapper">
+                <input type="radio" id="gender-male" value="male" name="radio-gender" checked />
+                <label class="radio" for="gender-male">Male</label>
+
+                <input type="radio" id="gender-female" value="female" name="radio-gender" />
+                <label class="radio" for="gender-female">Female</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="col-3">
+            <label>Activity Level</label>
+            <select id="in-activity">
+              <option>Sedentary</option>
+              <option>Light</option>
+              <option>Moderate</option>
+              <option>Heavy</option>
+              <option>Very Heavy</option>
+            </select>
+          </div>
+
+          <div class="col-3">
+            <label for="in-height">Height (cm)</label>
+            <input id="in-height" value="171" type="number" required />
+          </div>
+
+          <div class="col-3">
+            <label for="in-weight">Weight (kg)</label>
+            <input id="in-weight" value="87" type="number" required />
+          </div>
+
+          <div class="col-3">
+            <label for="in-age">Age</label>
+            <input id="in-age" value="22" type="number" required />
+          </div>
+
+        </div>
+      </form>
+      <button id="btn-calc">Calculate</button>
+    </div>
+
+    <div class="app-inner-cont" id="output-cont">
+      <div class="row cf">
+        <div class="col-2">
+          <h3>BMR</h3>
+          <div id="output-bmr" class="output-data">0</div>
+        </div>
+        <div class="col-2">
+          <h3>TDEE</h3>
+          <div id="output-tdee" class="output-data">0</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
